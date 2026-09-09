@@ -97,17 +97,4 @@ PCAP-StoryTeller/
 | **HTTP** | ✅ Full | Unencrypted Web Postcards |
 | **HTTPS/TLS** | ✅ Full | Locked Safes (SNI detection) |
 | **TCP** | ✅ Full | Registered Letters (Ordered) |
-| **ICMP** | ✅ Full | Calling "Hello?" (Ping) |
-
----
-
-## 🙏 Credits & Acknowledgments
-Built for educators using these amazing open-source projects:
-- [**Scapy**](https://scapy.readthedocs.io/) - The Magnifying Glass.
-- [**Flask**](https://flask.palletsprojects.com/) - The Storytelling Engine.
-- [**Folium**](https://python-visualization.github.io/folium/) - The Global Map.
-- [**vis.js**](http://visjs.org/) & [**Chart.js**](https://www.chartjs.org/) - The Visuals.
-
----
-
-**Made with ❤️ for students of Cybersecurity**
+| **ICMP** | ✅ Full | Calling "Hello?" (Ping)
