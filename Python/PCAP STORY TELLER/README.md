@@ -1,211 +1,113 @@
-<h1 align="center">🛡️ PCAP Storyteller</h1>
+<h1 align="center"> 🛡️ PCAP Storyteller </h1>
 
 <p align="center">
-  <strong>Turning Network Traffic into an Understandable Story</strong>
+  <strong>The Forensic detective for Students & Educators</strong>
 </p>
 
 <p align="center">
-  Transform complex PCAP network traffic into an interactive and visual
-  forensic investigation experience designed for students and educators.
+  Transform messy PCAP network traffic into an interactive, visual storyboard. Built from the ground up to make network forensics easy to teach, learn, and understand.
 </p>
 
 ---
 
-## 🌟 Why PCAP Storyteller?
+## 🌟 Why PCAP StoryTeller? (The Problem)
 
-Traditional packet-analysis tools such as **Wireshark** are extremely
-powerful, but beginners can easily become overwhelmed by thousands of
-individual packets.
+Traditional tools like **Wireshark** are built for experts but often overwhelm students with "Data Overload." 
 
-### The Problem
-
-A PCAP containing 50,000+ packets can look like a massive spreadsheet.
-Understanding the relationship between DNS queries, TCP connections,
-HTTP traffic, TLS sessions, and suspicious activity can be difficult.
-
-### Our Solution
-
-**PCAP Storyteller** converts raw packet-level information into meaningful
-network events and relationships.
-
-Instead of focusing only on individual packets, the platform helps answer:
-
-- Who communicated with whom?
-- Which domains were contacted?
-- What protocols were involved?
-- Which IP addresses appear suspicious?
-- Was there potential port scanning?
-- Was there unusual DNS behavior?
-- Where are external IP addresses located?
-
-The goal is:
-
-**Raw Packets → Events → Relationships → Threats → Visual Story**
-
----
-
-## 🚀 Key Features
-
-### 🕵️ The Investigator — PCAP Parser
-
-- **Two-Pass Analysis Pipeline**
-  - First identifies conversations
-  - Then performs detailed protocol analysis
-
-- **Intelligent Event Linking**
-  - Correlates DNS queries with resulting network connections
-  - Connects related DNS, TCP, HTTP and TLS activity
-
-- **Unified Protocol Handlers**
-  - Specialized analysis for DNS, HTTP, TLS, TCP, ICMP and more
-
----
-
-### 🧠 The Security Guard — Threat Detection
-
-PCAP Storyteller uses heuristic-based behavioral analysis to identify
-potentially suspicious network activity.
-
-Features include:
-
-- Port scanning detection
-- DNS tunneling indicators
-- Suspicious communication patterns
-- Behavioral analysis
-- Risk scoring
-
-### ⚠️ Risk Scoring
-
-Each IP address can receive a severity score between:
-
-**0 — 100**
-
-This helps investigators prioritize potentially suspicious activity
-instead of manually inspecting every connection.
-
----
-
-### 🌍 The Global View — IP Geolocation
-
-External IP addresses can be mapped geographically using a dual-API
-strategy.
-
-- `ipinfo.io`
-- `ip-api.com`
-
-The results can be displayed using interactive geographic maps.
-
----
-
-### 📊 Interactive Visualization
-
-The platform transforms forensic data into visual information that is
-easier to understand.
-
-Visualizations can include:
-
-- Network relationships
-- Communication events
-- Threat indicators
-- Risk scores
-- IP locations
-- Investigation results
+- **The Wireshark Problem**: 50,000 packets look like a confusing spreadsheet. It's hard to see the "Story."
+- **Our Solution**: We automatically **Link** related events (DNS ➔ HTTP ➔ TLS) and use **Heuristic Intelligence** to flag hacker behavior so you can focus on the investigation, not the noise.
 
 ---
 
 ## 🎓 Educational Curriculum
 
-PCAP Storyteller also provides structured learning material to help
-students understand network forensics step by step.
+We have organized a complete 9-module learning path in the `documentation/` folder:
 
-The `documentation/` directory contains modules covering:
-
-1. **Introduction & Problem Statement**
-   - Why network forensics can be difficult
-   - How PCAP Storyteller addresses the problem
-
-2. **Definitions & Terminology**
-   - Packets
-   - Protocols
-   - DNS
-   - TCP
-   - IP addresses
-
-3. **Technology Stack**
-   - Flask
-   - Scapy
-   - Folium
-   - Frontend technologies
-
-4. **Parsing Pipeline Deep-Dive**
-   - Two-pass analysis
-   - Packet extraction
-   - Conversation discovery
-   - Protocol handling
-
-5. **Threat Detection Heuristics**
-   - Behavioral analysis
-   - Port scanning
-   - DNS tunneling
-   - Risk scoring
-
-6. **Teaching Flow**
-   - Suggested classroom workflow
-   - How educators can use the platform
-
-> Additional curriculum modules will be added as the project develops.
+1.  [**00 | Intro & Problem Statement**](documentation/00_Introduction_and_Problem_Statement.md) - Why forensics is hard and how we fix it.
+2.  [**01 | Definitions & Terminology**](documentation/01_Definitions_and_Terminology.md) - DNS as a phonebook, Packets as envelopes.
+3.  [**02 | Tech Stack & Libraries**](documentation/02_Tech_Stack_and_Flask_Libraries.md) - Why we use Flask, Scapy, and Folium.
+4.  [**03 | Parsing Pipeline Deep-Dive**](documentation/03_Parsing_Pipeline_Deep_Dive.md) - The 2-pass engine explained.
+5.  [**05 | Threat Detection Heuristics**](documentation/05_Threat_Detection_Heuristics.md) - Behavioral analysis vs. virus databases.
+6.  [**08 | Teaching Flow**](documentation/08_Teaching_Flow_Curriculum.md) - A guide for classroom instruction.
 
 ---
 
-## 🛠️ Technology Stack
+## 🚀 Key Features
 
-| Technology | Purpose |
-|------------|---------|
-| **Python** | Core application development |
-| **Flask** | Web application backend |
-| **Scapy** | PCAP and packet analysis |
-| **Folium** | Interactive geographic maps |
-| **JavaScript** | Frontend functionality |
-| **HTML / CSS** | User interface |
-| **Leaflet** | Interactive mapping |
-| **Chart.js** | Charts and data visualization |
-| **vis.js** | Network/event visualization |
+### 🕵️ The Investigator (Parser)
+- **2-Pass Pipeline**: Identifies conversations first, then analyzes protocol details.
+- **Intelligent Linking**: Automatically correlates DNS queries with their resulting TCP/HTTP connections.
+- **Unified Handlers**: Specialized "Experts" for DNS, HTTP, TLS, ICMP, and more.
+
+### 🧠 The Security Guard (Threats)
+- **Heuristic Engine**: Detects Port Scanning and DNS Tunneling via behavior, not just signatures.
+- **Risk Scoring**: Calculates a math-based severity score (0-100) for every IP address.
+
+### 🌍 The Global View (Geomap)
+- **Dual-API strategy**: Uses `ipinfo.io` and `ip-api.com` to map attackers globally.
+- **Interactive Leaflet Maps**: Real-world "pins" showing where traffic originates.
 
 ---
 
-## 📁 Project Architecture
+## ⚡ Quick Start
 
-The project follows a modular architecture separating the frontend,
-backend, packet parsing, threat detection and supporting services.
+### 📦 Proper Installation (Package Mode)
+```bash
+# This uses our simplified setup.py to fetch everything automatically
+pip install .
+```
 
-```text
+### 🏃 Run the Application
+```bash
+python run.py
+```
+The application will start on **http://localhost:5000**
+
+---
+
+## 📁 Project Architecture (The Engine Room)
+
+The project follows a modular "Services" architecture for clarity:
+
+```
 PCAP-StoryTeller/
-│
-├── run.py
-├── setup.py
-│
-├── documentation/
-│   ├── 00_Introduction_and_Problem_Statement.md
-│   ├── 01_Definitions_and_Terminology.md
-│   ├── 02_Tech_Stack_and_Flask_Libraries.md
-│   ├── 03_Parsing_Pipeline_Deep_Dive.md
-│   ├── 05_Threat_Detection_Heuristics.md
-│   └── 08_Teaching_Flow_Curriculum.md
-│
-├── frontend/
-│   └── ...
-│
-└── backend/
-    │
-    ├── app.py
-    │
-    ├── data/
-    │
-    ├── parsers/
+├── run.py                 # The Ignition Switch (Entry Point)
+├── setup.py               # The Assembly Line (Installation)
+├── documentation/         # The Classroom (Curriculum)
+├── frontend/              # The Dashboard (User Interface)
+└── backend/               # The Engine Room (Analysis)
+    ├── app.py             # Application Factory
+    ├── data/              # The Brain (Persistence & DataManager)
+    ├── parsers/           # The Investigator (Packet Deep-Dive)
     │   ├── pcap_parser.py
     │   └── protocol_handlers.py
-    │
-    └── services/
+    └── services/          # Specialized Experts
         ├── threat_service.py
         ├── map_service.py
         └── report_generator.py
+```
+
+---
+
+## 🔧 Supported Protocols
+
+| Protocol | Status | Analogy |
+|----------|--------|---------|
+| **DNS** | ✅ Full | The Network Phonebook |
+| **HTTP** | ✅ Full | Unencrypted Web Postcards |
+| **HTTPS/TLS** | ✅ Full | Locked Safes (SNI detection) |
+| **TCP** | ✅ Full | Registered Letters (Ordered) |
+| **ICMP** | ✅ Full | Calling "Hello?" (Ping) |
+
+---
+
+## 🙏 Credits & Acknowledgments
+Built for educators using these amazing open-source projects:
+- [**Scapy**](https://scapy.readthedocs.io/) - The Magnifying Glass.
+- [**Flask**](https://flask.palletsprojects.com/) - The Storytelling Engine.
+- [**Folium**](https://python-visualization.github.io/folium/) - The Global Map.
+- [**vis.js**](http://visjs.org/) & [**Chart.js**](https://www.chartjs.org/) - The Visuals.
+
+---
+
+**Made with ❤️ for students of Cybersecurity**
